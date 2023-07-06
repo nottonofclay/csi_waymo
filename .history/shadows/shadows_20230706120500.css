@@ -1,0 +1,5 @@
+/* x-axis || y-axis || spread || color*/
+h1 {
+    /* text-shadow: 5px -5px 3px red, -5px 5px 3px orange, 0px 0px 5px grey; */
+    box-shadow: 5px 5px 5px black;
+}

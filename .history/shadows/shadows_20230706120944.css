@@ -1,0 +1,8 @@
+/* x-axis || y-axis || spread || color*/
+h1 {
+    text-shadow: 5px -5px 5px red, -5px 3px 5px orange, 0px 0px 5px grey;
+    width:50%;
+}
+h1:hover {
+    box-shadow: -5px -5px 10px orange;
+}

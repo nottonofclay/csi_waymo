@@ -1,0 +1,4 @@
+/* x-axis || y-axis || spread*/
+h1 {
+    text-shadow: 5px 0px 3px red, -5px 5px 3px orange;
+}

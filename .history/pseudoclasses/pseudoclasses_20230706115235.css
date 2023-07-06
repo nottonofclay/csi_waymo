@@ -1,0 +1,22 @@
+a:link {
+    color:red;
+}
+a:visited {
+    color:darkolivegreen;
+}
+a:hover {
+    color:black;
+}
+a:active{
+    color:aqua;
+}
+button:hover {
+    color:cornflowerblue;
+    background-color: white;
+}
+button:active {
+    background-color: green;
+}
+li:nth-child(3) {
+    background-color:
+}

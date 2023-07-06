@@ -1,0 +1,20 @@
+#box1 {
+    border: 2px solid;
+    border-radius: 5px;
+    width: 250px;
+    height: 250px;
+    background: lightsalmon;
+    font-size: 170px;
+    text-align: center;
+
+    animation: mySlide;
+    animation-play-state: running;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    animation-timing-function:
+}
+
+@keyframes mySlide {
+    from {margin-left: 0%}
+    to {margin-left: 100%}
+}
