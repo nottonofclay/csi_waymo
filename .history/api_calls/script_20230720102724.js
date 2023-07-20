@@ -112,36 +112,23 @@ function giveMusic() {
         alert(error.message);
     })
 }
-// function giveArtist(accessToken) {
-//     var xhr = new XMLHttpRequest();
-//     xhr.open("GET", "https://api.spotify.com/v1/artists/5069JTmv5ZDyPeZaCCXiCg");
-//     xhr.setRequestHeader("Authorization", "Bearer " + accessToken.access_token);
-//     xhr.onreadystatechange = function() {
-//         if(xhr.readyState == 4 && xhr.status < 300) {
-//             var artist = JSON.parse(xhr.responseText);
-//             console.log(artist);
-//         }
-//     };
-//     xhr.send();
-// }
+function giveArtist(accessToken) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://api.spotify.com/v1/artists/5069JTmv5ZDyPeZaCCXiCg");
+    xhr.setRequestHeader("Authorization", "Bearer " + accessToken.access_token);
+    xhr.onreadystatechange = function() {
+        if(xhr.readyState == 4 && xhr.status < 300) {
+            var artist = JSON.parse(xhr.responseText);
+            console.log(artist);
+        }
+    };
+    xhr.send();
+}
 function giveArtist(accessToken) {
     fetch("https://api.spotify.com/v1/artists/5069JTmv5ZDyPeZaCCXiCg", {
         method: "GET",
         headers: {
-            "Authorization": "Bearer " + accessToken.access_token
+            
         }
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error("HTTP error " + response.status);
-        }
-        return response.json();
-    })
-    .then(data => {
-        var artist = data;
-        console.log(artist);
-    })
-    .catch(error => {
-        alert(error.message);
     })
 }
