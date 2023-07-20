@@ -90,16 +90,17 @@ function giveQuote() {
 // }
 
 function giveMusic() {
-    fetch ("https://accounts.spotify.com/api/token", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/x-www-form-urlencoded"
-        },
-        body: "grant_type=client_credentials&client_id=3277c3c1f8e242818ff22812ebd2b3c7&client_secret=302cbd82f8be404f9625b248f71d945a"
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error("HTTP error " + response.status);
+    var xhr = new XMLHttpRequest();
+    var accessToken;
+    xhr.open("POST", "https://accounts.spotify.com/api/token");
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.send("grant_type=client_credentials&client_id=3277c3c1f8e242818ff22812ebd2b3c7&client_secret=302cbd82f8be404f9625b248f71d945a");
+    xhr.onreadystatechange = function() {
+        if(xhr.readyState == 4 && xhr.status < 300) {
+            accessToken = JSON.parse(xhr.responseText);
+            // console.log(accessToken);
+            // console.log(accessToken.access_token);
+            giveArtist(accessToken)
         }
         return response.json();
     })
